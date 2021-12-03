@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.HashSet;
      public class arrays {
          public static void main(String[] args) {
@@ -12,7 +13,18 @@ import java.util.HashSet;
              number.add("3");
              number.add("3");
              number.add("4");
+
              System.out.println(number);
+
+             for (int i = 0; i < number.size(); i++) {
+
+                 if (number == number)
+                     System.out.println("_");
+                 
+
+             }
          }
      }
+
+
 

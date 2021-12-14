@@ -1,37 +1,27 @@
+import javax.xml.namespace.QName;
+
 public class Person {
-    int hp; //data member
-    int att; //data member
-    int mp; //data member
-    int attack;
+
+    int Hp; //data member
+    int Att; //data member
+    int Mp; //data member
     String name; //data member
 
-    int gethp() {
-        //method member
-        return this.hp; //this 指向此類別本身
-    }
-    int getAtt(){
-        return this.att;
-    }
-    int getmp(){
-        return this.mp;
-    }
-    int getAttack(){
-        return this.attack;
-    }
-    void attack(Person enemy){
-        int result = this.attack - enemy.attack;
-        if(result>0){
-            this.hp = this.hp - result;
-        }
+
+
+    Person(String PersonName,int personHp, int personAtt, int personMp) {
+          name = PersonName;
+          Hp   = personHp;
+          Mp   = personMp;
+          Att  = personAtt;
+
     }
 
-    String getMyName() {
-        return this.name;
-    }
-    //this 指向此類別本身
-
-    void ShoutMyName() {
-        //method member
-        System.out.println("I am " + getMyName().toUpperCase() + "."); //於類別內呼叫getMyName函數
+    void getCurrentStatus(){
+        System.out.println("Name:" + name);
+        System.out.println("Ap:" + Hp);
+        System.out.println("Mp:" + Mp);
+        System.out.println("Att:" + Att);
+        System.out.println("______________________");
     }
 }

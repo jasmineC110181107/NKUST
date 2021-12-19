@@ -5,7 +5,7 @@ public class Person {
     int Mp; //data member
     String name; //data member
     String skill;
-    Person(String PersonName,int personHp, int personAtt, int personMp , String personskill) {
+    Person(String PersonName,int personHp, int personAtt, int personMp ,String personskill) {
           name = PersonName;
           Hp   = personHp;
           Mp   = personMp;

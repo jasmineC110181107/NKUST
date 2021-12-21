@@ -15,6 +15,6 @@ public class role {
         System.out.println("HP:" + hp);
         System.out.println("ATT:" + att);
         System.out.println("MP:" + mp);
-        System.out.println("--------------------");
+        System.out.println("===================");
     }
 }

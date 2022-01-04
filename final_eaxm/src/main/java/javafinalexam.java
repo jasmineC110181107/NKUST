@@ -1,7 +1,7 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-public class spider_work2 {
+public class javafinalexam{
     public static void main(String[] args) {
         try {
             Document movie = Jsoup.connect("https://movies.yahoo.com.tw/showtimes").get();

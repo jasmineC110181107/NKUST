@@ -29,14 +29,21 @@ public class spider {
                     String English = MovieInfo.select("h3").text();
                     System.out.printf("電影網址：%s\n" , movieUrl);
                     System.out.printf("電影中文名稱：%s\n電影英文名稱：%s\n" ,Chinese,English);
-
+                    //抓取電影類別
+                    Elements levelName = MovieInfo.select(".level_name");
+                    System.out.println("電影類別：" + levelName.text());
+                    //抓取並輸出上映日期至分數資料
+                    Elements intro = MovieInfos.select("span");
+                    for (int i = 0 ; i <= intro.size() - 3 ; i++){
+                        System.out.println(intro.get(i).text());
+                    }
                 }
 
                 rank = rank + 1;
                 System.out.println("=============================================================");
-                }
-            } catch(Exception e){
-                System.out.println("error" + e);
             }
+        } catch(Exception e){
+            System.out.println("error" + e);
         }
+    }
 }

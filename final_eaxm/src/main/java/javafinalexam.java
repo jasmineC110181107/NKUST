@@ -9,13 +9,14 @@ public class spider {
     public static void main(String[] args) throws IOException {
 
         try {
-
+            int rank = 1;
             Document doc = Jsoup.connect("https://movies.yahoo.com.tw/showtimes").get();
             System.out.println("台北票房TOP10電影");
             System.out.println("==================================");
             //抓取電影的網址位置
             Elements movieUrls = doc.select(".showtime .main-distance .ranking-list li");
             for (Element Urls : movieUrls) {
+                System.out.printf("第%d名\n",rank);
                 //抓取各個電影網址
                 Element Url = Urls.select(".gabtn").first();
                 String movieUrl = Url.absUrl("href");
@@ -26,15 +27,13 @@ public class spider {
                 for (Element MovieInfo : MovieInfos){
                     String Chinese = MovieInfo.select("h1").text();
                     String English = MovieInfo.select("h3").text();
+                    System.out.printf("電影網址：%s\n" , movieUrl);
                     System.out.printf("電影中文名稱：%s\n電影英文名稱：%s\n" ,Chinese,English);
-                }
-               // String URL_1 = "";
-               // Element take = doc.select("div.main-distance li a").first();
-               // URL_1 = take.attr("href");
-               // Document index_1 = Jsoup.connect(URL_1).get();
-               // System.out.println(URL_1);
-               // System.out.println(index_1.title());
 
+                }
+
+                rank = rank + 1;
+                System.out.println("=============================================================");
                 }
             } catch(Exception e){
                 System.out.println("error" + e);

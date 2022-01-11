@@ -5,7 +5,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
-public class spider {
+public class spider_work2 {
     public static void main(String[] args) throws IOException {
 
         try {

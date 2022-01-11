@@ -25,8 +25,8 @@ public class spider {
                 Elements MovieInfos = movieDoc.select("#container #content_l .l_box_inner .table .movie_intro_info_r");
                 //讀取並輸出所有資料
                 for (Element MovieInfo : MovieInfos){
-                    String Chinese = MovieInfo.select("h1").text();
-                    String English = MovieInfo.select("h3").text();
+                    String Chinese = MovieInfo.select("h1").text();    //擷取中文名稱
+                    String English = MovieInfo.select("h3").text();    //擷取英文名稱
                     System.out.printf("電影網址：%s\n" , movieUrl);
                     System.out.printf("電影中文名稱：%s\n電影英文名稱：%s\n" ,Chinese,English);
                     //抓取電影類別
